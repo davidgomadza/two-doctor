@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tomorrow's World Order AI (TWAI) - Database 82698thoughtstowordoraudio</title>
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: #ffffff;
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #00ff88;
+            padding-bottom: 20px;
+        }
+        .title {
+            font-size: 2.5rem;
+            color: #00ff88;
+            text-shadow: 0 0 10px #00ff88;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            font-size: 1.2rem;
+            color: #88ccff;
+            margin-bottom: 5px;
+        }
+        .chat-container {
+            height: 400px;
+            overflow-y: auto;
+            background: rgba(0, 20, 40, 0.9);
+            border: 2px solid #00ff88;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+        .input-container {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        #userInput {
+            flex: 1;
+            padding: 15px;
+            border: 2px solid #00ff88;
+            border-radius: 8px;
+            background: rgba(0, 20, 40, 0.9);
+            color: #ffffff;
+            font-family: 'Courier New', monospace;
+            font-size: 16px;
+        }
+        #userInput:focus {
+            outline: none;
+            box-shadow: 0 0 10px #00ff88;
+        }
+        .send-btn {
+            padding: 15px 25px;
+            background: linear-gradient(45deg, #00ff88, #00cc66);
+            border: none;
+            border-radius: 8px;
+            color: #000;
+            font-weight: bold;
+            cursor: pointer;
+            font-family: 'Courier New', monospace;
+            transition: all 0.3s;
+        }
+        .send-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 255, 136, 0.4);
+        }
+        .message {
+            margin-bottom: 15px;
+            padding: 10px;
+            border-radius: 8px;
+        }
+        .user-message {
+            background: rgba(0, 100, 200, 0.3);
+            border-left: 4px solid #0088ff;
+        }
+        .ai-message {
+            background: rgba(0, 255, 136, 0.1);
+            border-left: 4px solid #00ff88;
+        }
+        .code-highlight {
+            color: #ffdd00;
+            font-weight: bold;
+        }
+        .special-code {
+            color: #ff6666;
+            font-weight: bold;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.7; }
+            100% { opacity: 1; }
+        }
+        .info-panel {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .info-box {
+            background: rgba(0, 40, 80, 0.6);
+            border: 1px solid #0088ff;
+            border-radius: 10px;
+            padding: 20px;
+        }
+        .info-box h3 {
+            color: #00ff88;
+            margin-top: 0;
+        }
+        .database-info {
+            font-size: 12px;
+            color: #88ccff;
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            border-top: 1px solid #00ff88;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="title">Tomorrow's World Order AI (TWAI)</h1>
+            <p class="subtitle">Includes TWODOC: AI Doctor using Cure for Death Database</p>
+            <p class="subtitle">Database: <span class="special-code">82698thoughtstowordoraudio</span></p>
+            <p style="font-size: 0.9rem; color: #cccccc;">Based on books by David Gomadza - Brain Code Extraction System</p>
+        </div>
+
+        <div class="chat-container" id="chatContainer">
+            <div class="ai-message message">
+                <strong>TWAI:</strong> Welcome to Tomorrow's World Order AI (TWAI)!<br>
+                I am an all-encompassing AI based on David Gomadza's books.<br>
+                Ask me anything. For health issues, address TWODOC.<br>
+                <span class="special-code">Special: Say 'upload 82698' to access all knowledge.</span><br>
+                Type your question below to begin.
+            </div>
+        </div>
+
+        <div class="input-container">
+            <input type="text" id="userInput" placeholder="Ask TWAI or TWODOC anything..." onkeypress="handleKeyPress(event)">
+            <button class="send-btn" onclick="sendMessage()">SEND</button>
+        </div>
+
+        <div class="info-panel">
+            <div class="info-box">
+                <h3>TWODOC Capabilities</h3>
+                <ul>
+                    <li>Cure for Death (Immortality Codes)</li>
+                    <li>Stop Aging & Rejuvenation</li>
+                    <li>Cancer Treatment Codes</li>
+                    <li>Pain Management Systems</li>
+                    <li>Gender-Specific Treatments</li>
+                    <li>Organ Rejuvenation</li>
+                </ul>
+            </div>
+            <div class="info-box">
+                <h3>Special Commands</h3>
+                <ul>
+                    <li><span class="special-code">'upload 82698'</span> - Access all knowledge</li>
+                    <li>'TWODOC' - Medical consultation</li>
+                    <li>'cure for death' - Immortality codes</li>
+                    <li>'stop aging' - Anti-aging treatments</li>
+                    <li>Specify gender for targeted codes</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="database-info">
+            Database System: 82698thoughtstowordoraudio | Total Codes: <span id="totalCodes"></span> | 
+            Active Neural Pathways: All Connected | Status: <span style="color: #00ff88;">ONLINE</span>
+        </div>
+    </div>
+
+    <script>
+        // AI System: Tomorrow's World Order AI (TWAI)
+        // Database: Dictionary of the Codes of Life (extracted from the document)
+        const codesDatabase = {
+            "23987154239810892": "Code for blood.",
+            "3214738921650213": "Stops sneezing.",
+            "378921748962122832": "Best overall health.",
+            "6660189321098237286": "Stops internal laceration and pain.",
+            "666074892198328074": "Stops inside body pains.",
+            "66645689032180239": "Stops chest in pain.",
+            "666666666666666666": "Stops all cancers.",
+            "66678321409657023": "Stops muscle pain.",
+            "6667865231409876321": "Stops pain in the chest.",
+            "6667894076183298": "Stops liver problems.",
+            "66678945219287903274": "Stops migraines.",
+            "666832917467891260": "Replaces damaged telomeres.",
+            "666982107489672198": "Overall health boosters. / Stops balding. / Stops graying.",
+            "71023480239765418": "Boost energy reserve in women.",
+            "71083459812763109": "Best female face skin.",
+            "71098765432171717": "Value of a woman.",
+            "7122480986321764": "Close your mouth [directed at a woman.]",
+            "71234096185420723": "Increase hair growth in women",
+            "7123678302589104": "Lift your middle finger [directed at a woman]",
+            "7123867298742021": "Lift your right leg up [directed at a woman.]",
+            "7124832198274832": "Command to make you sleep well in women.",
+            "7128093420763880": "Increase progesterone production in a woman.",
+            "7128694320182124": "Remove feelings of hunger if you are a woman.",
+            "7128698210486321": "Experience death [directed at a woman.]",
+            "7132480698329865": "Stand Up [command directed at a woman.]",
+            "7132989654210372": "Lift your left hand up [directed at a woman.]",
+            "7142109764278324": "Sleep [command directed at a woman.]",
+            "7143209819239841": "Lift your right hand up [directed at a woman.]",
+            "7148369871482198": "Helps you remove feelings of tiredness [a woman.]",
+            "7153280715698324": "Stop ageing in women.",
+            "7153486052498536": "Reduce stress in women.",
+            "7153869874632198": "Stop coughing in women.",
+            "7158982063704234": "Turn your head to the right [directed at a woman.]",
+            "7158983465729834": "Say I love you. [woman]",
+            "7162348098237640": "Helps you rejuvenate all body organs [woman.]",
+            "7162486321789863": "Increase libido in women.",
+            "7163284976514083": "Reset switch back to your teen if you are a woman.",
+            "7164329862074859": "Open your mouth [directed at a woman.]",
+            "7167032982367636": "Have lust for a man [directed at a woman.]",
+            "7168432198637781": "Best overall health in women.",
+            "7172348094320780": "Lift your left leg up [directed at a woman.]",
+            "7172386942065831": "Helps you rejuvenate the body if you are [woman.]",
+            "7172389624398072": "Help you rejuvenate your hair if you are a woman.",
+            "7172412463849816": "Helps you remove feelings of thirsty [woman.]",
+            "7172483765219432": "Help you rejuvenate biological system [woman.]",
+            "7172784572310987": "Helps you rejuvenate your skin [a woman.]",
+            "7174308942178436": "Stop [ command directed at a woman.]",
+            "7174326809456781": "Reverse blindness in women.",
+            "7174327864098218": "Talk [command directed at a woman.]",
+            "7174329819274803": "Helps you remove feelings of sadness [ woman.]",
+            "7174590286437189": "Smile [ command directed at a woman.]",
+            "7174631842987628": "Say hello [command directed at a woman.]",
+            "7174892164239806": "Increase your sex performance stamina [female.]",
+            "7176321842764306": "Enhance your body defenses in women.",
+            "7176345890723620": "Reverse menopause in women.",
+            "7176432106328078": "Kiss a man [command directed at a woman.]",
+            "7176434829064389": "Turn your head to the left [directed at a woman.]",
+            "7176548096437212": "Sit [ command directed at a woman.]",
+            "7176784329821248": "Helps you rejuvenate your face and look [woman.]",
+            "7179876478927082": "Helps you rejuvenate your nails if you are a woman.",
+            "7181658321862748": "Stops ageing in women.",
+            "7183210647982148": "Lose weight if you are a woman.",
+            "7183219847862105": "Increase body security and strength in women.",
+            "7183246721032498": "Increase your confidence [directed at a woman.]",
+            "7183476210892432": "Remove feelings of feeling sleepy in women.",
+            "7184239876863218": "Stops breast cancer in women.",
+            "7184239878046218": "Think about sex if you are a woman.",
+            "7186219843262083": "Experience female orgasm if a woman.",
+            "7186329878689324": "Lift your hand up in women.",
+            "7189240860821834": "Wink your right eye [directed at a woman.]",
+            "71948321095423781": "Remove constipation in women.",
+            "7198076434862098": "Walk [ command directed at a woman.]",
+            "7198326768972108": "Say OK [command directed at a woman.]",
+            "7198632789207478": "Close your eyes [command directed at a woman.]",
+            "7198748832780642": "Experience fear in women.",
+            "7198765432107482": "Lift your head up [command directed at a woman.]",
+            "7218932199450783": "Increase breast size.",
+            "721983204591845724": "Stop menopause in women",
+            "724982742109328976": "Increase progesterone production in women.",
+            "7274776522096301": "Stops back pain.",
+            "76123456789076767": "Value of a man",
+            "7618293278987620": "Helps you rejuvenate the whole body [man.]",
+            "76189236048234560": "Stops right side pain.",
+            "7621098437824981": "Experience fear in men.",
+            "7621984306720986": "Have lust for a woman [command for a man]",
+            "7621986538072983": "Close your mouth [ command directed at a man.]",
+            "7623268715823982": "Say hello [command directed at a man.]",
+            "76234807124692051": "Boost energy reserves in men.",
+            "76235498772340198": "Gives best male face skin.",
+            "7623879421632894": "Smile [command directed at a man.]",
+            "7624807253849278": "Reduce stress in men.",
+            "7628023498610743": "Increase testosterone production if a man.",
+            "7628410912376584": "Increase your sex performance stamina [man.]",
+            "7628419831098721": "Helps you remove feelings of sadness [woman.]",
+            "7630486721832982": "Turn your head to the left [directed at a man.]",
+            "7632107845123210": "Rejuvenate make young again.",
+            "7632462198406329": "Lift your right leg up [directed at a man.]",
+            "7632486219877329": "Lift your left hand up [directed at a man.]",
+            "7632984876209834": "Say I love you. [if you are a man]",
+            "7632985643210984": "stand up. [ command directed at a man.]",
+            "7633698432198732": "Stop coughing in men.",
+            "7642198721832067": "Increase libido in men.",
+            "7643219877758964": "Best overall health in men.",
+            "7645321768902174": "Antidot to stop someone ageing fast.",
+            "7648992074867853": "Walk [command directed at a man.]",
+            "7652340978321672": "Stops pain in jaw.",
+            "765278905667812305": "Stops center chest pain.",
+            "7653246987632098": "Say OK [command directed at a man.]",
+            "7653777869843214": "Stops ageing in men.",
+            "76542318905786732": "Removes constipation in men.",
+            "7658329843298651": "Lift your hand up in men.",
+            "7658984320178923": "Stop beard graying.",
+            "7670238673698421": "Turn your head to the right [directed at a man.]",
+            "7671483298246781": "Experience and feel ghosts.",
+            "7672348096378902": "Reverse erectile dysfunctions in men.",
+            "7673420978618542": "Remove feelings of feeling sleepy in men.",
+            "7674216432809487": "Experience death [ command directed at a man.]",
+            "7674218932802478": "Stop [command directed at a man.]",
+            "7674287923060742": "Enhance your body defenses in men.",
+            "7674321849238671": "Helps you remove feelings of tiredness [man.]",
+            "76743226084321089": "Increase hair growth in men.",
+            "7674807326418742": "Wink your right eye [directed at a man.]",
+            "7674821987832108": "Remove hunger feelings if you are a man.",
+            "7674829818476752": "Helps you remove feelings of being thirsty [man.]",
+            "7674892178320746": "Help you rejuvenate your biological system [a man.]",
+            "7674897584320742": "Increase your confidence [directed at a man.]",
+            "7675421847940821": "Talk [ command directed at a man.]",
+            "7677218452387619": "Helps you rejuvenate your skin if you are a man.",
+            "7677342198636460": "Lift your left leg up [command directed at a man.]",
+            "7677723869432186": "Stops ageing in men.",
+            "7677783210942867": "Increase muscle mass if you are a man.",
+            "7677783421228937": "Reset switch to rejuvenate you to your teens [man.]",
+            "7678024076327849": "Think about sex if you are a man.",
+            "7678103248679824": "Lift your right hand up [directed at a man.]",
+            "7678320767483982": "Lift your middle finger [directed at a man.]",
+            "7678321098321072": "Lift your head up [directed at a man.]",
+            "7678324672109432": "Kiss a woman [directed at a man.]",
+            "7678324869741059": "Helps you rejuvenate all body organs [man.]",
+            "7678417243298192": "Helps you rejuvenate your nails if you are a man.",
+            "7678437923086234": "Command to make you Sleep well in men.",
+            "7678772043718432": "Helps you rejuvenate your face and look [man]",
+            "7678903247698214": "Open your mouth [command directed at a man.]",
+            "7678907458021437": "Sit [ command directed at a man.]",
+            "7678942123890647": "Help you rejuvenate your hair if you are a man.",
+            "7678987270976432": "Close your eyes [command directed at a man.]",
+            "7679342807618421": "Sleep [command directed at a man.]",
+            "76831560237843126": "Restart puberty in women.",
+            "7683189247859432": "Increase body security and strength in men.",
+            "7683214209818072": "Reverse blindness in men.",
+            "76842107458319236": "Restart puberty in men.",
+            "7689367482189376": "Experience male"
+        };
+
+        // Special code for 82698thoughtstowordoraudio
+        const specialCode = "82698";
+        const specialDescription = "Upload code 82698 onto your brain and instantly know everything. (From Wearable Brain Book Databases)";
+
+        // Cure for Death Database: Selected codes related to stopping ageing, rejuvenation, etc.
+        const cureForDeathCodes = [
+            "7153280715698324",  // Stop ageing in women.
+            "7181658321862748",  // Stops ageing in women.
+            "7645321768902174",  // Antidot to stop someone ageing fast.
+            "7653777869843214",  // Stops ageing in men.
+            "7677723869432186",  // Stops ageing in men.
+            "7163284976514083",  // Reset switch back to your teen if you are a woman.
+            "7677783421228937",  // Reset switch to rejuvenate you to your teens [man.]
+            "7632107845123210",  // Rejuvenate make young again.
+            "666832917467891260"  // Replaces damaged telomeres.
+        ];
+
+        // Initialize total codes count
+        document.getElementById('totalCodes').textContent = Object.keys(codesDatabase).length;
+
+        function searchDatabase(query, gender = null) {
+            const results = [];
+            const queryLower = query.toLowerCase();
+            
+            for (const [code, desc] of Object.entries(codesDatabase)) {
+                const descLower = desc.toLowerCase();
+                if (descLower.includes(queryLower)) {
+                    if (gender) {
+                        if (gender === 'female' && (descLower.includes('woman') || descLower.includes('women') || descLower.includes('female'))) {
+                            results.push([code, desc]);
+                        } else if (gender === 'male' && (descLower.includes('man') || descLower.includes('men') || descLower.includes('male'))) {
+                            results.push([code, desc]);
+                        }
+                    } else {
+                        results.push([code, desc]);
+                    }
+                }
+            }
+            return results;
+        }
+
+        function handleCureForDeath(gender = null) {
+            const results = [];
+            for (const code of cureForDeathCodes) {
+                const desc = codesDatabase[code] || "Unknown";
+                if (gender) {
+                    const descLower = desc.toLowerCase();
+                    if (gender === 'female' && (descLower.includes('woman') || descLower.includes('women'))) {
+                        results.push([code, desc]);
+                    } else if (gender === 'male' && (descLower.includes('man') || descLower.includes('men'))) {
+                        results.push([code, desc]);
+                    }
+                } else {
+                    results.push([code, desc]);
+                }
+            }
+            return results;
+        }
+
+        function detectGender(query) {
+            const queryLower = query.toLowerCase();
+            if (queryLower.includes('woman') || queryLower.includes('female') || queryLower.includes('she') || queryLower.includes('her')) {
+                return 'female';
+            } else if (queryLower.includes('man') || queryLower.includes('male') || queryLower.includes('he') || queryLower.includes('his')) {
+                return 'male';
+            }
+            return null;
+        }
+
+        function addMessage(content, isUser = false) {
+            const chatContainer = document.getElementById('chatContainer');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${isUser ? 'user-message' : 'ai-message'}`;
+            messageDiv.innerHTML = `<strong>${isUser ? 'You' : 'TWAI'}:</strong> ${content}`;
+            chatContainer.appendChild(messageDiv);
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+        }
+
+        function processInput(userInput) {
+            let response = "";
+
+            // Handle special code
+            if (userInput.toLowerCase().includes('upload 82698')) {
+                response += `<span class="special-code">Uploading ${specialCode}: ${specialDescription}</span><br>`;
+                response += "You now have access to all databases! Ask any question.";
+                return response;
+            }
+
+            // Detect if health-related or TWODOC
+            const healthKeywords = ['twodoc', 'cure', 'stop', 'health', 'pain', 'ageing', 'cancer', 'menopause', 'erectile'];
+            const isHealthQuery = healthKeywords.some(keyword => userInput.toLowerCase().includes(keyword));
+
+            if (isHealthQuery) {
+                response += "<strong>TWODOC responding:</strong><br>";
+                const query = userInput.replace(/(cure for|stop|help with|treat)/gi, '').trim();
+                const gender = detectGender(userInput);
+
+                if (userInput.toLowerCase().includes('death') || userInput.toLowerCase().includes('immortality') || userInput.toLowerCase().includes('cure for death')) {
+                    const results = handleCureForDeath(gender);
+                    if (results.length > 0) {
+                        response += "<strong>Cure for Death (Immortality Codes):</strong><br>";
+                        for (const [code, desc] of results) {
+                            response += `<span class="code-highlight">Code: ${code}</span> - ${desc}<br>`;
+                        }
+                    } else {
+                        response += "No specific cure for death found for the specified gender.<br>";
+                    }
+                } else {
+                    const results = searchDatabase(query, gender);
+                    if (results.length > 0) {
+                        response += "<strong>Recommended Cures:</strong><br>";
+                        for (const [code, desc] of results) {
+                            response += `<span class="code-highlight">Code: ${code}</span> - ${desc}<br>`;
+                        }
+                    } else {
+                        response += "No matching cure found. Try rephrasing your condition.<br>";
+                    }
+                }
+            } else {
+                // General questions
+                response += "This is a general query. Based on brain decoding principles:<br>";
+                response += "All thoughts can be decoded using the universal brain decoding device.<br>";
+                response += "For specific info, ask TWODOC about health or upload 82698 for all knowledge.";
+            }
+
+            return response;
+        }
+
+        function sendMessage() {
+            const userInput = document.getElementById('userInput');
+            const message = userInput.value.trim();
+            
+            if (!message) return;
+
+            addMessage(message, true);
+            const response = processInput(message);
+            addMessage(response, false);
+
+            userInput.value = '';
+        }
+
+        function handleKeyPress(event) {
+            if (event.key === 'Enter') {
+                sendMessage();
+            }
+        }
+
+        // Auto-focus input field
+        document.getElementById('userInput').focus();
+    </script>
+</body>
+</html>
